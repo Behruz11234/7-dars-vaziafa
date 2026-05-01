@@ -1,0 +1,22 @@
+{
+  "name": "7-dars-vazifa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Behruz11234/7-dars-vaziafa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Behruz11234/7-dars-vaziafa/issues"
+  },
+  "homepage": "https://github.com/Behruz11234/7-dars-vaziafa#readme"
+}

@@ -1,0 +1,129 @@
+  write_file("users.json", users)
+
+  res.json({message:"Deleted"})
+
+})
+})
+
+// ORDERS
+app.post("/add-order",(req,res) => {
+  const { userId,productId } = req.body
+
+  if(!userId || !productId){
+    return res.status(400).json({
+      massage: "userId and productId required"
+    })
+  }
+
+  const orders = read_file_("orders.json")
+
+  orders.push({
+    id: uuid.v4(),
+    userId,
+    productId
+  })
+
+  write_file("orders.json",orders)
+
+  res.status(201).json({
+  massage: "Order added"
+  })
+
+  app.patch("/update_order/:id",(req,res)=>{
+  const orders = read_file("orders.json")
+
+  const found = orders.find(i=>i.id===req.params.id)
+
+  if(!found){
+    return res.status(404).json({message:"Order not found"})
+  }
+
+  orders.forEach(i=>{
+    if(i.id===req.params.id){
+      i.userId = req.body.userId ? req.body.userId : i.userId
+      i.productId = req.body.productId ? req.body.productId : i.productId
+    }
+  })
+
+  write_file("orders.json", orders)
+
+  res.json({message:"Updated"})
+})
+})
+
+// CATEGORIES
+app.post("/add_category",(req,res)=>{
+  if(!req.body.name){
+    return res.status(400).json({message:"Name required"})
+  }
+
+  const categories = read_file("categories.json")
+
+  categories.push({
+    id: uuid.v4(),
+    name: req.body.name
+  })
+
+  write_file("categories.json", categories)
+
+  res.status(201).json({message:"Added"})
+})
+
+// EMPLOYEES
+app.post("/add_employee",(req,res)=>{
+  if(!req.body.name){
+    return res.status(400).json({message:"Name required"})
+  }
+
+  const employees = read_file("employees.json")
+
+  employees.push({
+    id: uuid.v4(),
+    name: req.body.name
+  })
+
+  write_file("employees.json", employees)
+
+  res.status(201).json({message:"Added"})
+})
+
+// CLIENTS
+app.post("/add_client",(req,res)=>{
+  if(!req.body.name){
+    return res.status(400).json({message:"Name required"})
+  }
+
+  const clients = read_file("clients.json")
+
+  clients.push({
+    id: uuid.v4(),
+    name: req.body.name
+  })
+
+  write_file("clients.json", clients)
+
+  res.status(201).json({message:"Added"})
+})
+
+// PAYMENTS 
+app.post("/add_payment",(req,res)=>{
+  if(!req.body.amount){
+    return res.status(400).json({message:"Amount required"})
+  }
+
+  const payments = read_file("payments.json")
+
+  payments.push({
+    id: uuid.v4(),
+    amount: req.body.amount
+  })
+
+  write_file("payments.json", payments)
+
+  res.status(201).json({message:"Added"})
+})  
+
+
+app.listen(PORT, () => {
+  console.log("Server is running at: PORT");
+}) 
