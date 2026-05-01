@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/Behruz11234/7-dars-vaziafa#readme",
   "dependencies": {
-    "nodemon": "^3.1.14"
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "uuid": "^14.0.0"
   }
 }

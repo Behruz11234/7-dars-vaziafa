@@ -1,6 +1,6 @@
 const express = require("express")
 const { read_file, write_file } = require("./fs/file-manager")
-require("dotenv").config()
+require('dotenv').config();
 const cors = require("cors")
 const uuid = require("uuid")
 
