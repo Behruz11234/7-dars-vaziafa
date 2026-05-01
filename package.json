@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Behruz11234/7-dars-vaziafa/issues"
   },
-  "homepage": "https://github.com/Behruz11234/7-dars-vaziafa#readme"
+  "homepage": "https://github.com/Behruz11234/7-dars-vaziafa#readme",
+  "dependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
